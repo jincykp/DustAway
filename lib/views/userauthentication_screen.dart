@@ -1,3 +1,4 @@
+import 'package:dustaway/core/services/auth_services.dart';
 import 'package:dustaway/core/theme/colors.dart';
 import 'package:dustaway/core/widgets/auth_button.dart';
 import 'package:dustaway/core/widgets/logo_button.dart';
@@ -12,6 +13,7 @@ class UserAuthenticationScreen extends StatefulWidget {
 }
 
 class _UserAuthenticationScreenState extends State<UserAuthenticationScreen> {
+  AuthServices authServices = AuthServices();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,7 @@ class _UserAuthenticationScreenState extends State<UserAuthenticationScreen> {
             AuthButton(
               text: 'Continue with Google',
               onPressed: () {
-                // Google sign-in logic
+                authServices.signInWithGoogle(context);
               },
               backgroundColor: AppColors.greyColor,
               textColor: AppColors.blackColor,
