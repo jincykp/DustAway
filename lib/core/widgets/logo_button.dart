@@ -19,6 +19,5 @@ class LogoButton extends StatelessWidget {
             TextStyle(color: AppColors.whiteColor, fontWeight: FontWeight.bold),
       )),
     );
-    ;
   }
 }

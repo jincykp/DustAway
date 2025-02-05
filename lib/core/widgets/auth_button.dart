@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color backgroundColor;
   final String? imagePath; // Optional image
   final Color textColor; // Custom text color
@@ -23,7 +23,7 @@ class AuthButton extends StatelessWidget {
 
     return Center(
       child: SizedBox(
-        width: screenWidth * 1, // Set width to 80% of screen width
+        width: screenWidth * 1,
         child: TextButton(
           onPressed: onPressed,
           style: TextButton.styleFrom(
