@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dustaway/views/bottom_screens.dart';
 import 'package:dustaway/views/userhome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class AuthServices {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => UserhomeScreen(),
+              builder: (context) => BottomScreen(),
             ),
           );
         }

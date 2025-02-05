@@ -1,4 +1,5 @@
 import 'package:dustaway/core/theme/colors.dart';
+import 'package:dustaway/core/widgets/cards.dart';
 import 'package:flutter/material.dart';
 
 class UserhomeScreen extends StatelessWidget {
@@ -119,7 +120,7 @@ class UserhomeScreen extends StatelessWidget {
                           child: Text(
                             "Available Services",
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400),
+                                fontSize: 15, fontWeight: FontWeight.w500),
                           ),
                         ),
                         SizedBox(height: 10),
@@ -163,7 +164,7 @@ class UserhomeScreen extends StatelessWidget {
                     Text(
                       "Cleaning Services",
                       style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
                     TextButton(
@@ -178,7 +179,11 @@ class UserhomeScreen extends StatelessWidget {
                       color: AppColors.baseColor,
                     )
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                HorizontalCardList(),
               ]),
             ),
           ),
