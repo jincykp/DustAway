@@ -1,5 +1,6 @@
 import 'package:dustaway/core/theme/colors.dart';
 import 'package:dustaway/core/widgets/cards.dart';
+import 'package:dustaway/views/service_listing_screen.dart';
 import 'package:flutter/material.dart';
 
 class UserhomeScreen extends StatelessWidget {
@@ -168,7 +169,13 @@ class UserhomeScreen extends StatelessWidget {
                     ),
                     Spacer(),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ServiceListingScreen()));
+                        },
                         child: Text(
                           "See All",
                           style: TextStyle(color: AppColors.specialTextColor),

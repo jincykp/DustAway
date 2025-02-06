@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color baseColor = Colors.green;
+  static const Color orangeColor = Color.fromARGB(255, 230, 125, 65);
   static const Color specialTextColor = Color.fromARGB(255, 26, 206, 32);
   static const Color whiteColor = Colors.white;
   static const Color blackColor = Colors.black;
