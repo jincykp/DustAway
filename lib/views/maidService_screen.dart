@@ -1,5 +1,6 @@
 import 'package:dustaway/core/theme/colors.dart';
 import 'package:dustaway/core/widgets/getxcontroller.dart';
+import 'package:dustaway/views/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -10,6 +11,7 @@ class MaidserviceScreen extends StatelessWidget {
   final CartController cartController = Get.put(CartController());
 
   MaidserviceScreen({super.key}) {
+    final cartController = Get.put(CartController());
     cartController.initializeItems();
   }
 
@@ -233,13 +235,22 @@ class MaidserviceScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               children: [
-                                const Expanded(
+                                Expanded(
                                   child: Center(
-                                    child: Text(
-                                      'VIEW CART',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CartScreen()));
+                                      },
+                                      child: Text(
+                                        'VIEW CART',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ),
                                   ),

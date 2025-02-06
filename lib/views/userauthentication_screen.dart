@@ -26,7 +26,6 @@ class _UserAuthenticationScreenState extends State<UserAuthenticationScreen> {
   }
 
   String formatPhoneNumber(String number) {
-    // Remove any non-digit characters
     String digits = number.replaceAll(RegExp(r'[^\d]'), '');
 
     // If number doesn't start with +91 and has 10 digits, add +91
@@ -166,7 +165,7 @@ class _UserAuthenticationScreenState extends State<UserAuthenticationScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 180),
+                const SizedBox(height: 250),
                 const LogoButton(),
                 const SizedBox(height: 200),
                 AuthButton(

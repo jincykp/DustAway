@@ -49,6 +49,15 @@ class AuthServices {
       log("Google Sign-In failed: $e");
     }
   }
+
+  Future<void> signout() async {
+    try {
+      await auth.signOut();
+      await googleSignIn.signOut(); // Sign out from Google
+    } catch (e) {
+      log("Error during signout: $e");
+    }
+  }
 }
 
 class UserService {
