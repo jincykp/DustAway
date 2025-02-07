@@ -57,13 +57,14 @@ class UserhomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(50)),
-                  width: screenWidth,
-                  height: 200,
-                  child:
-                      Image.asset('assets/images/perfectcleaningservice.png'),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    'assets/images/perfectcleaningservice.png',
+                    width: screenWidth,
+                    height: 200,
+                    fit: BoxFit.cover, // Adjust as needed
+                  ),
                 ),
                 SizedBox(
                   height: 20,
