@@ -20,12 +20,12 @@ class PhoneOtpScreen extends StatefulWidget {
 
 class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
   final List<TextEditingController> otpControllers = List.generate(
-    4,
+    6,
     (index) => TextEditingController(),
   );
   bool isLoading = false;
   bool isResending = false;
-  final focusNodes = List.generate(4, (index) => FocusNode());
+  final focusNodes = List.generate(6, (index) => FocusNode());
 
   @override
   void dispose() {
@@ -41,7 +41,7 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
   Future<void> verifyOTP() async {
     // Validate OTP
     String otp = otpControllers.map((controller) => controller.text).join();
-    if (otp.length != 4) {
+    if (otp.length != 6) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please enter complete OTP')),
       );
@@ -152,7 +152,7 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
 
   Widget buildOTPTextField(int index) {
     return SizedBox(
-      width: 70,
+      width: 60,
       child: TextField(
         controller: otpControllers[index],
         focusNode: focusNodes[index],
@@ -238,7 +238,7 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(
-                      4,
+                      6,
                       (index) => buildOTPTextField(index),
                     ),
                   ),
