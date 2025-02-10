@@ -61,7 +61,12 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
       if (mounted) {
         // Show success message
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Verification successful!')),
+          SnackBar(
+              backgroundColor: AppColors.baseColor,
+              content: Text(
+                'Verification successful!',
+                style: TextStyle(color: AppColors.whiteColor),
+              )),
         );
 
         // Navigate to home screen
@@ -152,7 +157,7 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
 
   Widget buildOTPTextField(int index) {
     return SizedBox(
-      width: 60,
+      width: 55,
       child: TextField(
         controller: otpControllers[index],
         focusNode: focusNodes[index],
@@ -181,7 +186,8 @@ class _PhoneOtpScreenState extends State<PhoneOtpScreen> {
         ),
         onChanged: (value) {
           if (value.isNotEmpty) {
-            if (index < 3) {
+            if (index < 5) {
+              // Changed from 3 to 5
               FocusScope.of(context).requestFocus(focusNodes[index + 1]);
             } else {
               focusNodes[index].unfocus();

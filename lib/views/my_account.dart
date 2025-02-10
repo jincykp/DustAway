@@ -84,7 +84,9 @@ class MyAccountScreen extends StatelessWidget {
                   Container(
                     width: 120,
                     height: 30,
-                    decoration: BoxDecoration(color: AppColors.whiteColor),
+                    decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                        borderRadius: BorderRadius.circular(5)),
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Text(' Balance- 125',
